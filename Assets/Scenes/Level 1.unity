@@ -38,13 +38,13 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.38372162, g: 0.047292516, b: 0.0038645782, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 11
-  m_GIWorkflowMode: 0
+  m_GIWorkflowMode: 1
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -131,6 +131,7 @@ GameObject:
   - component: {fileID: 107355962}
   - component: {fileID: 107355964}
   - component: {fileID: 107355963}
+  - component: {fileID: 107355965}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -178,8 +179,8 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 04a842e316b6f44bf8da702de26a8ed6, type: 3}
-    m_FontSize: 116
+    m_Font: {fileID: 12800000, guid: 13fd532eb525a15448883e51c3f67ac0, type: 3}
+    m_FontSize: 59
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
@@ -190,7 +191,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: BOOOOBE
+  m_Text: 0
 --- !u!222 &107355964
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -199,6 +200,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 107355961}
   m_CullTransparentMesh: 0
+--- !u!114 &107355965
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 107355961}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ebecc38c5fa9224eb106c44153cc88f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &362876015
 GameObject:
   m_ObjectHideFlags: 0
@@ -337,7 +350,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1963857078541744, guid: 4eddec5e5a6ed514cb7704f25ab89890, type: 3}
       propertyPath: m_Name
-      value: AlienDestroyerGreen (1)
+      value: Destroyer(1)
       objectReference: {fileID: 0}
     - target: {fileID: 4073189499389180, guid: 4eddec5e5a6ed514cb7704f25ab89890, type: 3}
       propertyPath: m_LocalPosition.x
@@ -482,7 +495,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1089099125859580, guid: adc8a98e73ca77a41b7d79a6beec2ccb, type: 3}
       propertyPath: m_Name
-      value: AlienFighterGreen (1)
+      value: Fighter(1)
       objectReference: {fileID: 0}
     - target: {fileID: 4351941035781178, guid: adc8a98e73ca77a41b7d79a6beec2ccb, type: 3}
       propertyPath: m_LocalPosition.x
@@ -528,16 +541,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 883751039, guid: adc8a98e73ca77a41b7d79a6beec2ccb, type: 3}
-      propertyPath: deathFX
-      value: 
-      objectReference: {fileID: 8642541286913179066, guid: 55201d9cc55ef6c49bf76648154e21a5,
-        type: 3}
-    - target: {fileID: 883751039, guid: adc8a98e73ca77a41b7d79a6beec2ccb, type: 3}
-      propertyPath: deathExplosion
-      value: 
-      objectReference: {fileID: 8642541286913179066, guid: 55201d9cc55ef6c49bf76648154e21a5,
-        type: 3}
     - target: {fileID: 883751039, guid: adc8a98e73ca77a41b7d79a6beec2ccb, type: 3}
       propertyPath: parent
       value: 
@@ -641,6 +644,50 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1088206314 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1963857078541744, guid: 4eddec5e5a6ed514cb7704f25ab89890,
+    type: 3}
+  m_PrefabInstance: {fileID: 1882844027}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1088206315
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1088206314}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!320 &1088206316
+PlayableDirector:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1088206314}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_PlayableAsset: {fileID: 11400000, guid: 9ea21e7afb8d45d4aaa30a7782ee276b, type: 2}
+  m_InitialState: 1
+  m_WrapMode: 2
+  m_DirectorUpdateMode: 1
+  m_InitialTime: 0
+  m_SceneBindings:
+  - key: {fileID: -153006673905423780, guid: 9ea21e7afb8d45d4aaa30a7782ee276b, type: 2}
+    value: {fileID: 1088206315}
+  m_ExposedReferences:
+    m_References: []
 --- !u!1 &1143983759
 GameObject:
   m_ObjectHideFlags: 0
@@ -782,7 +829,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1963857078541744, guid: 4eddec5e5a6ed514cb7704f25ab89890, type: 3}
       propertyPath: m_Name
-      value: AlienDestroyerGreen
+      value: Destroyer(2)
       objectReference: {fileID: 0}
     - target: {fileID: 4073189499389180, guid: 4eddec5e5a6ed514cb7704f25ab89890, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1068,19 +1115,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1963857078541744, guid: 4eddec5e5a6ed514cb7704f25ab89890, type: 3}
       propertyPath: m_Name
-      value: AlienDestroyerGreen
+      value: Destroyer(0)
       objectReference: {fileID: 0}
     - target: {fileID: 4073189499389180, guid: 4eddec5e5a6ed514cb7704f25ab89890, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.700001
+      value: -45.04252
       objectReference: {fileID: 0}
     - target: {fileID: 4073189499389180, guid: 4eddec5e5a6ed514cb7704f25ab89890, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.1299992
+      value: 36.6
       objectReference: {fileID: 0}
     - target: {fileID: 4073189499389180, guid: 4eddec5e5a6ed514cb7704f25ab89890, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 5.720001
+      value: 27.650238
       objectReference: {fileID: 0}
     - target: {fileID: 4073189499389180, guid: 4eddec5e5a6ed514cb7704f25ab89890, type: 3}
       propertyPath: m_LocalRotation.x
@@ -1088,7 +1135,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4073189499389180, guid: 4eddec5e5a6ed514cb7704f25ab89890, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.9999587
+      value: 0.8818969
       objectReference: {fileID: 0}
     - target: {fileID: 4073189499389180, guid: 4eddec5e5a6ed514cb7704f25ab89890, type: 3}
       propertyPath: m_LocalRotation.z
@@ -1096,7 +1143,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4073189499389180, guid: 4eddec5e5a6ed514cb7704f25ab89890, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.009091928
+      value: 0.47144222
       objectReference: {fileID: 0}
     - target: {fileID: 4073189499389180, guid: 4eddec5e5a6ed514cb7704f25ab89890, type: 3}
       propertyPath: m_RootOrder
@@ -1108,31 +1155,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4073189499389180, guid: 4eddec5e5a6ed514cb7704f25ab89890, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 181.04199
+      value: 123.744
       objectReference: {fileID: 0}
     - target: {fileID: 4073189499389180, guid: 4eddec5e5a6ed514cb7704f25ab89890, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 361879106, guid: 4eddec5e5a6ed514cb7704f25ab89890, type: 3}
-      propertyPath: deathFX
-      value: 
-      objectReference: {fileID: 8642541286913179066, guid: 55201d9cc55ef6c49bf76648154e21a5,
-        type: 3}
-    - target: {fileID: 361879106, guid: 4eddec5e5a6ed514cb7704f25ab89890, type: 3}
-      propertyPath: deathExplosion
-      value: 
-      objectReference: {fileID: 8642541286913179066, guid: 55201d9cc55ef6c49bf76648154e21a5,
-        type: 3}
-    - target: {fileID: 361879106, guid: 4eddec5e5a6ed514cb7704f25ab89890, type: 3}
       propertyPath: parent
       value: 
       objectReference: {fileID: 379402965}
-    - target: {fileID: 5715692566916832024, guid: 4eddec5e5a6ed514cb7704f25ab89890,
-        type: 3}
-      propertyPath: playOnAwake
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4eddec5e5a6ed514cb7704f25ab89890, type: 3}
 --- !u!4 &1882844028 stripped
@@ -1180,15 +1212,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1089099125859580, guid: adc8a98e73ca77a41b7d79a6beec2ccb, type: 3}
       propertyPath: m_Name
-      value: AlienFighterGreen
+      value: Fighter(2)
       objectReference: {fileID: 0}
     - target: {fileID: 4351941035781178, guid: adc8a98e73ca77a41b7d79a6beec2ccb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.1051292
+      value: -2.24
       objectReference: {fileID: 0}
     - target: {fileID: 4351941035781178, guid: adc8a98e73ca77a41b7d79a6beec2ccb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 9.290532
+      value: 17.63
       objectReference: {fileID: 0}
     - target: {fileID: 4351941035781178, guid: adc8a98e73ca77a41b7d79a6beec2ccb, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1301,6 +1333,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Terrain
+      objectReference: {fileID: 0}
+    - target: {fileID: 474242423299449723, guid: eb2061bea43154c41b3df901a2ca6bf1,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 474242423299449718, guid: eb2061bea43154c41b3df901a2ca6bf1,
         type: 3}
@@ -1542,7 +1579,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1089099125859580, guid: adc8a98e73ca77a41b7d79a6beec2ccb, type: 3}
       propertyPath: m_Name
-      value: AlienFighterGreen
+      value: Fighter(0)
       objectReference: {fileID: 0}
     - target: {fileID: 4351941035781178, guid: adc8a98e73ca77a41b7d79a6beec2ccb, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1550,11 +1587,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4351941035781178, guid: adc8a98e73ca77a41b7d79a6beec2ccb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.08599949
+      value: 11.07
       objectReference: {fileID: 0}
     - target: {fileID: 4351941035781178, guid: adc8a98e73ca77a41b7d79a6beec2ccb, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.5100021
+      value: 42.8
       objectReference: {fileID: 0}
     - target: {fileID: 4351941035781178, guid: adc8a98e73ca77a41b7d79a6beec2ccb, type: 3}
       propertyPath: m_LocalRotation.x
