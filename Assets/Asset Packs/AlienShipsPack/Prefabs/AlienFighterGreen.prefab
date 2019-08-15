@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 33216508653316524}
   - component: {fileID: 23844358526652866}
   - component: {fileID: 2118791968}
+  - component: {fileID: 883751039}
   m_Layer: 0
   m_Name: AlienFighterGreen
   m_TagString: Untagged
@@ -95,3 +96,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &883751039
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1089099125859580}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08fb0e2f7539ff640acd76c771ac0ce7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deathExplosion: {fileID: 8642541286913179066, guid: 55201d9cc55ef6c49bf76648154e21a5,
+    type: 3}
+  health: 100
+  parent: {fileID: 0}
+  points: 10

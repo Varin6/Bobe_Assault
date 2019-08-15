@@ -4,17 +4,24 @@ using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
 
 
-public class Player : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
+    [Header("General")]
     [Range(1f,20f)]
     [Tooltip("In ms^-1")][SerializeField] private float xSpeed = 15f;
-    [SerializeField] private float xRange;
+    [SerializeField] private float xRange = 6f;
+    [SerializeField] private float yRange = 3f;
 
+    [Header("Pitch/Yaw/Roll")]
     [SerializeField] private float positionPitchFactor = -5;
     [SerializeField] private float controlPitchFactor = -10;
     [SerializeField] private float positionYawFactor = 3;
     [SerializeField] private float controlYawFactor = 10;
     [SerializeField] private float rollFactor = -15;
+
+    [SerializeField] public float damage = 25;
+
+    private bool isControlEnabled = true;
 
     // Start is called before the first frame update
     void Start()
@@ -28,20 +35,15 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        ProcessMovement();
+        if (isControlEnabled)
+        {
+            ProcessMovement();
+        }
+        
 
-
-//        if (xOffset < 0)
-//        {
-//            
-//            //transform.Rotate(Vector3.forward * 2);
-//            
-//
-//        } else if (xOffset > 0)
-//        {
-//            //transform.Rotate(Vector3.back * 2);
-//        }
     }
+
+    
 
     private void ProcessMovement()
     {
@@ -52,7 +54,6 @@ public class Player : MonoBehaviour
         ProcessTranslation(xThrow, yThrow);
         ProcessRotation(xThrow, yThrow);
 
-        print(xThrow);
     }
 
     
@@ -77,9 +78,20 @@ public class Player : MonoBehaviour
         float xOffset = xThrow * Time.deltaTime * xSpeed;
         float yOffset = yThrow * Time.deltaTime * xSpeed;
 
-        float newX = Mathf.Clamp((transform.localPosition.x + xOffset), -6f, 6f);
-        float newY = Mathf.Clamp((transform.localPosition.y + yOffset), -3f, 3f);
+        float newX = Mathf.Clamp((transform.localPosition.x + xOffset), -xRange, xRange);
+        float newY = Mathf.Clamp((transform.localPosition.y + yOffset), -yRange, yRange);
 
         transform.localPosition = new Vector3(newX, newY, transform.localPosition.z);
     }
+
+
+
+    public void OnPlayerDeath()
+    {
+        isControlEnabled = false;
+       
+    }
+
+
+
 }

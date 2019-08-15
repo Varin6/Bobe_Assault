@@ -1,25 +1,36 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+
 
 public class MusicPlayer : MonoBehaviour
 {
     private AudioSource _audioSource;
-    static MusicPlayer instance;
+    //static MusicPlayer instance;
 
     private void Awake()
     {
-        if (instance == null)
-        {
-            instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else if (instance != this)
+        int numMusicPlayer = FindObjectsOfType<MusicPlayer>().Length;
+
+        if (numMusicPlayer > 1)
         {
             Destroy(gameObject);
         }
-        _audioSource = GetComponent<AudioSource>();
+        else
+        {
+            DontDestroyOnLoad(gameObject);
+        }
+
+//        if (instance == null)
+//        {
+//            instance = this;
+//            DontDestroyOnLoad(gameObject);
+//        }
+//        else if (instance != this)
+//        {
+//            Destroy(gameObject);
+//        }
+//        _audioSource = GetComponent<AudioSource>();
     }
 
 
@@ -27,7 +38,7 @@ public class MusicPlayer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Invoke("LoadFirstScene", 3f);
+        
     }
 
     // Update is called once per frame
@@ -37,15 +48,10 @@ public class MusicPlayer : MonoBehaviour
     }
 
 
-    public void PlayMusic()
-    {
-        if (_audioSource.isPlaying) return;
-        _audioSource.Play();
-    }
-
-    void LoadFirstScene()
-    {
-        SceneManager.LoadScene(1);
-    }
+//    public void PlayMusic()
+//    {
+//        if (_audioSource.isPlaying) return;
+//        _audioSource.Play();
+//    }
 
 }
