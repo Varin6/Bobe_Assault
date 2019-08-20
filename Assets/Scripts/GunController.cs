@@ -8,7 +8,13 @@ public class GunController : MonoBehaviour
 
     private ParticleSystem gun;
     private GameObject cam;
-    
+
+    [SerializeField]
+    private GameObject gunSound;
+    [SerializeField] private Transform parent;
+
+    private int _numberOfParticles = 0;
+
 
 
     private void Awake()
@@ -20,6 +26,7 @@ public class GunController : MonoBehaviour
     {
         gun = gameObject.GetComponent<ParticleSystem>();
         cam = GameObject.Find("Main Camera");
+        //gunSound = gun.GetComponent<AudioSource>();
 
     }
 
@@ -28,32 +35,33 @@ public class GunController : MonoBehaviour
         
     }
 
+
+
+
     
 
     void Update()
     {
         ProcessFire();
+       
     }
+
+    
+
 
     void ProcessFire()
     {
 
         if (CrossPlatformInputManager.GetButton("Fire1"))
         {
-            //Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-
+            
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
             var ree = Physics.Raycast(ray, out hit, Mathf.Infinity);
 
             if (ree)
             {
-               
-                //print(hit.transform.position);
-                //Physics.Raycast(transform.position, ray.direction, 20000);
                 transform.LookAt(hit.point);
-                //Debug.DrawRay(transform.position, ray.direction*50000, Color.green, 20, true);
-                
             }
             else
             {
@@ -66,16 +74,15 @@ public class GunController : MonoBehaviour
 
         if (CrossPlatformInputManager.GetButtonDown("Fire1"))
         {
-
             gun.Play();
-            print("shooting");
+            
         }
 
         if (CrossPlatformInputManager.GetButtonUp("Fire1"))
         {
-            print("not shooting");
             gun.Stop();
-
         }
+
+        
     }
 }

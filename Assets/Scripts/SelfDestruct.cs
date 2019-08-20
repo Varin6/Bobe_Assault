@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class SelfDestruct : MonoBehaviour
 {
+
+    [SerializeField] private float timeUntilDeath;
     // Start is called before the first frame update
     void Start()
     {
-        Destroy(gameObject, 4f);
+        Destroy(gameObject, timeUntilDeath);
     }
 
     // Update is called once per frame
